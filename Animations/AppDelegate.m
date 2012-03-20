@@ -64,7 +64,10 @@
         UINavigationController *replacementNavFirstVC = [[UINavigationController alloc] initWithRootViewController:replacementFirstVC];
         
         self.tabBarController.viewControllers = [NSArray arrayWithObjects:replacementNavFirstVC, secondVC, thirdVC, fourthVC, nil];
-        
+
+        // To my surprise, MGSplitViewController was the only one that allowed me to do the manual splash screen
+        // rotation inside SplashViewController. It didn't work with a regular UISplitViewController, though
+        // I didn't try for very long
         self.splitViewController = [[MGSplitViewController alloc] init];
         self.splitViewController.delegate = firstVC;
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.tabBarController, firstNav, nil];

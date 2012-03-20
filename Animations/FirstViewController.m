@@ -60,6 +60,13 @@
     UIBarButtonItem *star = [[UIBarButtonItem alloc] initWithCustomView:_favButton]; 
     self.navigationItem.rightBarButtonItem = star;
     
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.frame];
+    label.textAlignment = UITextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = @"Includes “MGSplitViewController” code by Matt Gemmell.";
+    [self.view addSubview:label];
+    
     SplashViewController *splashScreen = [[SplashViewController alloc] init];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
