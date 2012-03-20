@@ -52,7 +52,7 @@
                                                           tag:3];
     self.tabBarController = [[UITabBarController alloc] init];
 
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
         self.tabBarController.viewControllers = [NSArray arrayWithObjects:firstNav, secondVC, thirdVC, fourthVC, nil];
         self.window.rootViewController = self.tabBarController;

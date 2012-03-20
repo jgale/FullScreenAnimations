@@ -88,19 +88,8 @@
 
     if (_favButton.selected)
     {
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         FavouriteAnimationViewController *favAnimationView = [[FavouriteAnimationViewController alloc] init];
-    
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-        {
-            // For some reason, it seems like using window's rootViewController.view doesn't work for iPhone :(
-            [appDelegate.window addSubview:favAnimationView.view];
-        }
-        else
-        {
-            // Need to add it to the top-most view controller's view, or else it won't properly rotate to landscape
-            [appDelegate.splitViewController.view addSubview:favAnimationView.view];
-        }
+        [self.view.window.rootViewController.view addSubview:favAnimationView.view];
     }
 }
 
