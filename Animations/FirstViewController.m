@@ -91,7 +91,7 @@
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         FavouriteAnimationViewController *favAnimationView = [[FavouriteAnimationViewController alloc] init];
     
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
         {
             // For some reason, it seems like using window's rootViewController.view doesn't work for iPhone :(
             [appDelegate.window addSubview:favAnimationView.view];
