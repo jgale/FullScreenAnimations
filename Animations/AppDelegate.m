@@ -72,6 +72,9 @@
         self.splitViewController.delegate = firstVC;
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.tabBarController, firstNav, nil];
         
+        // Always show the the split view even in portrait mode
+        self.splitViewController.showsMasterInPortrait = YES;
+        
         self.window.rootViewController = self.splitViewController;
     }
     

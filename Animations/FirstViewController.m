@@ -64,6 +64,7 @@
     label.textAlignment = UITextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     label.text = @"Includes “MGSplitViewController” code by Matt Gemmell.";
     [self.view addSubview:label];
     
