@@ -100,6 +100,10 @@
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
         {
+            // This is unfortunate, but because are are dealing with this view in a non-standard way,
+            // we need code to handle iPhone 5 resolution it will just load the view as a 480-pixel tall view
+            favAnimationView.view.frame = appDelegate.window.frame;
+            
             [appDelegate.window addSubview:favAnimationView.view];
         }
         else

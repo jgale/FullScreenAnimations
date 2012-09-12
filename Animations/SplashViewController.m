@@ -46,7 +46,16 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
-        _animationBookCoverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+        if (([[UIScreen mainScreen] bounds].size.height > 480.1))
+        {
+            // iOS 6 doesn't seem to automatically pull out the iPhone 5 sized image so we manually need to load it
+            // if running on an iPhone 5.
+            _animationBookCoverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-568h.png"]];
+        }
+        else
+        {
+            _animationBookCoverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+        }
     }
     else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {          
