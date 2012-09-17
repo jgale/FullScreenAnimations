@@ -64,12 +64,18 @@
     label.textAlignment = UITextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
+    label.adjustsFontSizeToFitWidth = YES;
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     label.text = @"Includes “MGSplitViewController” code by Matt Gemmell.";
     [self.view addSubview:label];
     
     SplashViewController *splashScreen = [[SplashViewController alloc] init];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    // Hack for iOS 6 on iPad. Need this to get the split view to display properly on iOS 6 when opened in Landscape
+    // https://github.com/mattgemmell/MGSplitViewController/issues/69
+    [appDelegate.splitViewController setSplitPosition:appDelegate.splitViewController.splitPosition - 1];
+    [appDelegate.splitViewController setSplitPosition:appDelegate.splitViewController.splitPosition + 1];
     
     // This will never let me see the view underneath :(
     //[appDelegate.window.rootViewController presentModalViewController:splashScreen animated:NO];    
